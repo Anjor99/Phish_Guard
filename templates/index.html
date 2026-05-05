@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhishGuard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <!-- LEFT SIDE -->
+    <div class="left">
+
+        <div class="top">
+            <h2>🛡️ PhishGuard</h2>
+            <span class="status">● Active</span>
+        </div>
+
+        <div class="content">
+            <h1>Phishing URL Detector</h1>
+            <p>Scan URLs using machine learning.</p>
+
+            <form method="post" action="/predict" id="scanForm" class="form">
+                <input type="text" name="url" placeholder="https://example.com" required>
+                <button type="submit" id="scanBtn">Scan</button>
+            </form>
+
+            {% if result %}
+            <div class="result {% if result.strip().lower() == 'trusted' %}safe{% else %}phishing{% endif %}">
+                <p>URL: {{ url }}</p>
+                <h3>{{ result }}</h3>
+
+                <div class="bar">
+                    <div class="fill" style="width: {{ confidence }}%"></div>
+                </div>
+                <span>{{ confidence }}%</span>
+            </div>
+            {% endif %}
+        </div>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="right">
+
+        <div class="card">
+            <h3>Pattern Analysis</h3>
+            <p>Detects suspicious URL structures.</p>
+        </div>
+
+        <div class="card">
+            <h3>Threat Signals</h3>
+            <p>Analyzes entropy & anomalies.</p>
+        </div>
+
+        <div class="card">
+            <h3>ML Classification</h3>
+            <p>Model trained on phishing datasets.</p>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+document.getElementById('scanForm').addEventListener('submit', function() {
+    const btn = document.getElementById('scanBtn');
+    btn.textContent = 'Scanning...';
+    btn.disabled = true;
+});
+</script>
+
+</body>
+</html>

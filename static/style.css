@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+}
+
+/* FULL APP LAYOUT */
+.app {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* THIS is the key */
+    height: 100vh;
+    width: 100vw;
+}
+
+/* LEFT SIDE */
+.left {
+    padding: 40px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* TOP BAR */
+.top {
+    position: absolute;
+    top: 20px;
+    left: 60px;
+}
+
+.status {
+    color: #22c55e;
+    font-size: 14px;
+}
+
+/* MAIN CONTENT */
+.content {
+    max-width: 700px;
+}
+
+.content h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.content p {
+    color: #94a3b8;
+    margin-bottom: 25px;
+}
+
+/* FORM */
+.form {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+}
+
+.form input {
+    flex: 1;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    background: #020617;
+    color: white;
+    font-size: 15px;
+}
+
+.form button {
+    padding: 16px 28px;
+    border: none;
+    border-radius: 8px;
+    background: #3b82f6;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.form button:hover {
+    background: #2563eb;
+}
+
+/* RESULT */
+.result {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.result.phishing {
+    border: 1px solid #ef4444 !important;
+    background: rgba(239, 68, 68, 0.1) !important;
+}
+
+.result.safe {
+    border: 1px solid #22c55e;
+    background: rgba(34, 197, 94, 0.1);
+}
+
+.bar {
+    height: 8px;
+    background: #1e293b;
+    border-radius: 5px;
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.fill {
+    height: 100%;
+    background: #3b82f6;
+}
+
+/* RIGHT SIDE */
+.right {
+    background: #020617;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* CARDS */
+.card {
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #1e293b;
+    background: #020617;
+}
+
+.card h3 {
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+    .app {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .left {
+        padding: 30px 20px;
+    }
+
+    .right {
+        padding: 20px;
+    }
+
+    .content h1 {
+        font-size: 32px;
+    }
+}
