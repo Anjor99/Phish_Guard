@@ -28,7 +28,7 @@
             </form>
 
             {% if result %}
-            <div class="result {% if result.strip().lower() == 'trusted' %}safe{% else %}phishing{% endif %}">
+            <div class="result {% if result.strip().lower() == 'legitimate' %}safe{% else %}phishing{% endif %}">
                 <p>URL: {{ url }}</p>
                 <h3>{{ result }}</h3>
 

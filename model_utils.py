@@ -23,7 +23,7 @@ def predict_url(url):
     if is_trusted(url):
         return {
             "url": url,
-            "result": "Trusted",
+            "result": "Legitimate",
             "confidence": 100,
             "message": "Trusted domain override"
         }
@@ -45,7 +45,7 @@ def predict_url(url):
 
     return {
         "url": url,
-        "result": "Trusted",
+        "result": "Legitimate",
         "confidence": round(prob[0] * 100, 2),
         "message": "URL looks safe"
     }
