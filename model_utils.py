@@ -45,7 +45,7 @@ def predict_url(url):
 
     return {
         "url": url,
-        "result": "Legitimate",
+        "result": "Trusted",
         "confidence": round(prob[0] * 100, 2),
         "message": "URL looks safe"
     }
