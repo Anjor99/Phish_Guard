@@ -143,6 +143,9 @@ body {
 
 /* MOBILE */
 @media (max-width: 900px) {
+    .top {
+        display: none;
+    }
     .app {
         grid-template-columns: 1fr;
         height: auto;
