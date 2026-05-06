@@ -18,7 +18,10 @@ def home(request: Request):
     return templates.TemplateResponse("index.html", {
         "request": request
     })
-
+    
+@app.get("/healthz")
+def health():
+    return {"status": "healthy"}
 
 @app.post("/predict", response_class=HTMLResponse)
 def predict(request: Request, url: str = Form(...)):
